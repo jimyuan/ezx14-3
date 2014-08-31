@@ -1,0 +1,14 @@
+{
+  "name": "rc",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.20",
+    "snapjs": "~1.9.3",
+    "ratchet": "~2.0.2",
+    "angular-route": "~1.2.20",
+    "angular-resource": "~1.2.20",
+    "shake.js": "~1.1.0",
+    "angular-local-storage": "~0.0.5",
+    "animate.css": "~3.2.0"
+  }
+}
