@@ -1,0 +1,15 @@
+@import "../bower_components/ratchet/sass/mixins";
+@import "mixin";
+
+html, body{
+  @include square(100%);
+}
+
+h1{
+  margin:20px auto;
+  width:960px;
+  color:red;
+  text-align: center;
+  font-size: 80px;
+  @include hairline(double, black, 100%);
+}
