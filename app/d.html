@@ -8,7 +8,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <!-- build:css css/docs.css -->
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./bower_components/ratchet/dist/css/ratchet.css">
+    <link rel="stylesheet" href="./bower_components/ratchet/dist/css/ratchet-theme-ios.css">    
+    <link rel="stylesheet" href="./bower_components/angular-snap/angular-snap.css">    
     <link rel="stylesheet" href="./bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="./css/docs.css">
     <!-- endbuild -->
@@ -21,14 +23,38 @@
     <!-- iPad Retina -->
     <link href="touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
   </head>
-  <body onselectstart="return false">
-    <h1 ng-controller="DemoController" class="animated shake">{{demo}}</h1>
+  <body onselectstart="return false" ng-controller="globController" >
+    <div snap-content snap-options="snapOpts">
+      <header class="bar bar-nav">
+        <a class="icon icon-bars pull-right" snap-toggle="right"></a>
+        <h1 class="title" ng-bind="title"></h1>
+      </header>
 
+      <div class="content" ng-view></div>
+    </div>
+    <div snap-drawer="right">
+      <ul class="table-view">
+        <li class="table-view-cell">
+          <span class="media-object pull-left icon icon-person"></span>
+           花名册
+        </li>
+        <li class="table-view-cell">
+          <span class="media-object pull-left icon icon-pages"></span>
+          照片墙
+        </li>
+        <li class="table-view-cell">
+          <span class="media-object pull-left icon icon-sound"></span>
+          消息树
+        </li>
+      </ul>
+    </div>
     <!-- build:js js/docs.js -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-local-storage/angular-local-storage.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/snapjs/snap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-snap/angular-snap.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <!-- endbuild -->

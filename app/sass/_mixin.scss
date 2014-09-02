@@ -1,7 +1,15 @@
+@import "../bower_components/ratchet/sass/mixins";
+
 @mixin box($w, $h){
   width:$w; height:$h;
 }
 
 @mixin square($s){
   @include box($s, $s);
+}
+
+@mixin center(){
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }

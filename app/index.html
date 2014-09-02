@@ -19,7 +19,13 @@
     <link href="touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
   </head>
   <body onselectstart="return false">
-    <h1 ng-controller="DemoController" class="animated shake">{{demo}}</h1>
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <a class="icon icon-compose pull-right"></a>
+      <h1 class="title" ng-bind="title"></h1>
+    </header>
+
+    <div class="content" ng-view></div>
 
     <script src="dist/js/docs.js"></script>
   </body>
