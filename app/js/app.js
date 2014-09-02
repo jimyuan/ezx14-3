@@ -1,5 +1,9 @@
-var app=angular.module('facebook', [
-  'ngResource',
-  'ngRoute',
-  'LocalStorageModule'
-]);
+(function(){
+  var app=angular.module('facebook', [
+    'ngResource',
+    'ngRoute',
+    'LocalStorageModule',
+    'Controllers'
+  ]);
+
+})();

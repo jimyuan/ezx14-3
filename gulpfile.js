@@ -44,14 +44,12 @@
   //| ✓ sass2css
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('sass', function(){
-    return gulp.src(_.sass + '/**/*.scss')
+    return gulp.src(_.sass + '/**/*.scss').pipe($.rubySass({
+      style: 'expanded',
+      compass: true,
+      noCache: false
+    }).on('error', $.util.log))
     .pipe($.plumber())
-    .pipe($.compass({
-      config_file: _.app + "/config.rb",
-      css: _.css,
-      sass: _.sass,
-      image: _.img
-    }))
     .pipe(gulp.dest(_.css))
     .pipe($.size());
   });
