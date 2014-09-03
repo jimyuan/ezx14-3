@@ -32,19 +32,23 @@
 
       <div class="content" ng-view></div>
     </div>
-    <div snap-drawer="right">
+    <div snap-drawer="right" id="drawerContent">
       <ul class="table-view">
-        <li class="table-view-cell">
+        <li class="table-view-cell" ng-click="goSection('#/index')">
           <span class="media-object pull-left icon icon-person"></span>
            花名册
         </li>
-        <li class="table-view-cell">
-          <span class="media-object pull-left icon icon-pages"></span>
-          照片墙
+        <li class="table-view-cell" ng-click="goSection('#/schedule')">
+          <span class="media-object pull-left icon icon-compose"></span>
+           课程表
         </li>
-        <li class="table-view-cell">
+        <li class="table-view-cell" ng-click="goSection('#/notice')">
           <span class="media-object pull-left icon icon-sound"></span>
           消息树
+        </li>
+        <li class="table-view-cell" ng-click="goSection('#/gallery')">
+          <span class="media-object pull-left icon icon-pages"></span>
+          照片墙
         </li>
       </ul>
     </div>
@@ -57,6 +61,8 @@
     <script src="bower_components/angular-snap/angular-snap.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filters.js"></script>
     <!-- endbuild -->
   </body>
 </html>

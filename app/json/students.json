@@ -1,0 +1,208 @@
+{
+  "students" : [
+    {
+      "userId"   : 1,
+      "fullName" : "袁家辰",
+      "nickName" : "Jim",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 2,
+      "fullName" : "丁可",
+      "nickName" : "Coco",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 3,
+      "fullName" : "王子旋",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 4,
+      "fullName" : "朱皓芸",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 5,
+      "fullName" : "陈泓仰",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 6,
+      "fullName" : "张禾",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 7,
+      "fullName" : "张溢洋",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 8,
+      "fullName" : "贾宇凡",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 9,
+      "fullName" : "邱静怡",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 10,
+      "fullName" : "钱宸君",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 11,
+      "fullName" : "兰惠",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 12,
+      "fullName" : "兰馨",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 13,
+      "fullName" : "陈思宇",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 14,
+      "fullName" : "夏欣莹",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 15,
+      "fullName" : "颜锦",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 16,
+      "fullName" : "茅泽南",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 17,
+      "fullName" : "戴闫兰",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 18,
+      "fullName" : "金士懿",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 19,
+      "fullName" : "明彧",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 20,
+      "fullName" : "解颐",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 21,
+      "fullName" : "翁铭洋",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 22,
+      "fullName" : "腾逸乔",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 23,
+      "fullName" : "程煜祺",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 24,
+      "fullName" : "余承骏",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 25,
+      "fullName" : "张劼",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 26,
+      "fullName" : "丁文澜",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 27,
+      "fullName" : "曹筠靖",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 28,
+      "fullName" : "陆亦楠",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 29,
+      "fullName" : "袁潇",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 30,
+      "fullName" : "罗越",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 31,
+      "fullName" : "徐卓涵",
+      "nickName" : "",
+      "gender"   : "Male"
+    },
+    {
+      "userId"   : 32,
+      "fullName" : "吴家文",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 33,
+      "fullName" : "韩璟轩",
+      "nickName" : "",
+      "gender"   : "Female"
+    },
+    {
+      "userId"   : 34,
+      "fullName" : "张昊昱",
+      "nickName" : "",
+      "gender"   : "Male"
+    }
+  ]
+}

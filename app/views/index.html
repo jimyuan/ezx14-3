@@ -1,15 +1,16 @@
 <div class="list">
   <div class="segmented-control">
-    <a class="control-item active">
-      Thing one
+    <a class="control-item" ng-click="viewToggle=true; curFilter='userId'" ng-class="{active:viewToggle}">
+      全体名单
     </a>
-    <a class="control-item">
-      Thing two
+    <a class="control-item" ng-click="viewToggle=false; curFilter='-gender'" ng-class="{active:!viewToggle}">
+      按 性 别
     </a>
   </div>
 </div>
-
-<div class="btn btn-negative btn-outlined">Button</div>
-<button class="btn btn-negative btn-outlined">Button</button>
-<button class="btn btn-negative btn-outlined">Button</button>
-<button class="btn btn-negative btn-outlined">Button</button>
+<div class="content-padded">
+  <div class="btn btn-outlined animated bounceIn" 
+    ng-repeat="student in students | orderBy: curFilter" 
+    ng-bind="student.fullName" 
+    ng-class="{'btn-primary':student.gender=='Male', 'btn-negative': student.gender=='Female'}"></div>
+</div>

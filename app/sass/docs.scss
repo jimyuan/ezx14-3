@@ -5,6 +5,10 @@ html, body{
   @include square(100%);
 }
 
+#drawerContent{
+  display:none;
+}
+
 .list{
   width:50%;
   margin-top: 10px;
@@ -29,4 +33,11 @@ html, body{
 
 .snap-content{
   @include single-box-shadow(0, 3px, 7px, 2px, gray);
+}
+
+.content-padded{
+  &>.btn{
+    width:54px;
+    margin:5px;
+  }
 }
