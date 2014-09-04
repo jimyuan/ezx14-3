@@ -1,15 +1,43 @@
-@import "../bower_components/ratchet/sass/mixins";
 @import "mixin";
+@import "compass/css3";
 
 html, body{
   @include square(100%);
 }
 
-h1{
-  margin:20px auto;
-  width:960px;
-  color:red;
-  text-align: center;
-  font-size: 80px;
-  @include hairline(double, black, 100%);
+#drawerContent{
+  display:none;
+}
+
+.list{
+  width:50%;
+  margin-top: 10px;
+  margin-bottom:10px;
+  @include center;
+}
+
+.table-view, .table-view-cell{
+  background-color:transparent;
+  background-image:none;
+  color:white;
+}
+
+.table-view-cell{
+  padding-right: 20px;
+}
+
+.snap-drawer,{
+  width:160px;
+  @include linear-gradient(DarkSeaGreen, DarkGreen)
+}
+
+.snap-content{
+  @include single-box-shadow(0, 3px, 7px, 2px, gray);
+}
+
+.content-padded{
+  &>.btn{
+    width:54px;
+    margin:5px;
+  }
 }

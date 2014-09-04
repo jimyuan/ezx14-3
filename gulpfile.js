@@ -44,10 +44,12 @@
   //| ✓ sass2css
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('sass', function(){
+    console.log(_.sass + '/**/*.scss');
     return gulp.src(_.sass + '/**/*.scss').pipe($.rubySass({
       style: 'expanded',
       compass: true,
-      noCache: false
+      noCache: false,
+      lineNumber:true
     }).on('error', $.util.log))
     .pipe($.plumber())
     .pipe(gulp.dest(_.css))
@@ -90,11 +92,8 @@
   //| ✓ join & minify css & js
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('html', ['sass'], function() {
+    gulp.start('copy');
     var js = $.filter('**/*.js'), css = $.filter('**/*.css');
-    //copy reqired files to dist folder
-    gulp.src(_.app + '/*.txt').pipe(gulp.dest(_.dist));
-    gulp.src(_.views + '/*.html').pipe(gulp.dest(_.dist + '/views/'));
-    gulp.src(_.app + '/fonts/ratchions.*').pipe(gulp.dest(_.dist + '/fonts/'));
     return gulp.src([_.app + '/*.html'])
     .pipe($.plumber())
     .pipe($.useref.assets())
@@ -108,6 +107,16 @@
     .pipe($.useref())
     .pipe(gulp.dest(_.dist))
     .pipe($.size());
+  });
+
+  //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //| ✓ copy static files to dist files
+  //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+  gulp.task('copy', function(){
+    gulp.src(_.app + '/*.txt').pipe(gulp.dest(_.dist));
+    gulp.src(_.views + '/*.html').pipe(gulp.dest(_.dist + '/views/'));
+    gulp.src(_.app + '/bower_components/ratchet/fonts/*.*').pipe(gulp.dest(_.dist + '/fonts/'));
+    gulp.src(_.app + '/json/*.*').pipe(gulp.dest(_.dist + '/json/'));
   });
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,8 +141,9 @@
   gulp.task('watch', ['server'], function() {
     // Watch for changes in `app` dir
     $.watch({ glob: [
+      _.app + '/**/*.{html,txt}',
       _.views + '/**/*.html',
-      _.sass + '/**/*.scss',
+      // _.sass + '/**/*.scss',
       _.css + '/**/*.css',
       _.js + '/**/*.js',
       _.img + '/**/*.{png,jpg,jpeg,gif,ico}'

@@ -1,9 +1,7 @@
 .sass-cache
 node_modules
 
-app/.sass-cache
 app/bower_components
 app/dist
 app/css
-app/img/icons-*.png
-app/img/icons-*.png*
+app/img/icons
