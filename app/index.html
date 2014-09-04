@@ -18,14 +18,35 @@
     <!-- iPad Retina -->
     <link href="touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
   </head>
-  <body onselectstart="return false">
-    <!-- Make sure all your bars are the first things in your <body> -->
-    <header class="bar bar-nav">
-      <a class="icon icon-compose pull-right"></a>
-      <h1 class="title" ng-bind="title"></h1>
-    </header>
+  <body onselectstart="return false" ng-controller="globController">
+    <div snap-content snap-options="snapOpts">
+      <header class="bar bar-nav">
+        <a class="icon icon-bars pull-right" snap-toggle="right"></a>
+        <h1 class="title" ng-bind="title"></h1>
+      </header>
 
-    <div class="content" ng-view></div>
+      <div class="content" ng-view></div>
+    </div>
+    <div snap-drawer="right" id="drawerContent">
+      <ul class="table-view">
+        <li class="table-view-cell" ng-click="goSection('#/index')">
+          <span class="media-object pull-left icon icon-person"></span>
+           花名册
+        </li>
+        <li class="table-view-cell" ng-click="goSection('#/schedule')">
+          <span class="media-object pull-left icon icon-compose"></span>
+           课程表
+        </li>
+        <li class="table-view-cell" ng-click="goSection('#/notice')">
+          <span class="media-object pull-left icon icon-sound"></span>
+          消息树
+        </li>
+        <li class="table-view-cell" ng-click="goSection('#/gallery')">
+          <span class="media-object pull-left icon icon-pages"></span>
+          照片墙
+        </li>
+      </ul>
+    </div>
 
     <script src="dist/js/docs.js"></script>
   </body>

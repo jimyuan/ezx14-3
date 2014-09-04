@@ -44,6 +44,7 @@
   //| ✓ sass2css
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('sass', function(){
+    console.log(_.sass + '/**/*.scss');
     return gulp.src(_.sass + '/**/*.scss').pipe($.rubySass({
       style: 'expanded',
       compass: true,
