@@ -14,5 +14,5 @@
     ng-bind="student.fullName" 
     ng-click="putit($event)"
     ng-class="{'btn-primary':student.gender=='Male', 'btn-negative': student.gender=='Female'}"></div>
-    <p class="count-info">本班共有学生 <span ng-bind="students.length"></span> 名，男生 <span ng-bind="male.length"></span> 人，女生 <span ng-bind="students.length-male.length"></span> 人。</p>
+    <p class="count-info" ng-show="count=true">本班共有学生 <span ng-bind="students.length"></span> 名，男生 <span ng-bind="male.length"></span> 人，女生 <span ng-bind="students.length-male.length"></span> 人。</p>
 </div>

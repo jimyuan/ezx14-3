@@ -29,6 +29,7 @@
     };
   }]);
 
+  /* 花名册 */
   app.controller('ListCtrl', ['$scope', 'Students', '$filter', function($scope, Students, $filter){
     $scope.viewToggle = true;
     $scope.curFilter  = 'fullName';
@@ -36,6 +37,7 @@
     Students.query(function(data){
       $scope.students = $filter('formatName')(data.students);
       $scope.male = $filter('maleArray')(data.students);
+      $scope.count= true;
 
       $scope.putit = function($event){
         angular.element($event.srcElement).toggleClass('btn-outlined');
@@ -43,6 +45,7 @@
     });
   }]);
 
+  /* 课程表 */
   app.controller('SchedCtrl', ['$scope', '$filter', '$interval', function($scope, $filter, $interval){
     var curColumn = document.querySelectorAll('.table-schedule td:nth-child('+ (new Date().getDay()+1) +')');
     angular.element(curColumn).addClass('cur-day');
