@@ -5,7 +5,6 @@
     var url='/json/:service.json';
     return $resource(url, {}, {
       query:{
-        method:'GET', 
         params:{service: 'students'}
       }
     });

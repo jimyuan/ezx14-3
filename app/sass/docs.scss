@@ -5,6 +5,10 @@ html, body{
   @include square(100%);
 }
 
+.bar{
+  @include background-image(linear-gradient(top, white, darken(#ddd, 5%))); 
+}
+
 #drawerContent{
   display:none;
 }
@@ -37,7 +41,153 @@ html, body{
 
 .content-padded{
   &>.btn{
-    width:54px;
+    width:65px;
     margin:5px;
   }
+}
+
+.count-info{
+  font-size: 9px;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  $color-array: #5cb85c #428bca #d9534f;
+  @each $color in $color-array {
+    span:nth-child(#{index($color-array, $color)}){
+      color: $color;
+    }
+  }
+}
+
+.schedule{
+  padding:20px 10px;
+  text-align:center;
+  span{
+    font-size:12px;
+    color: #bbb;
+  }
+}
+
+//
+// Tables
+// --------------------------------------------------
+$table-bg: white;
+$body-bg: white;
+$line-height-computed: 20px;
+$table-cell-padding: 5px;
+$line-height-base: 20px;
+$table-border-color: #ddd;
+
+
+table {
+  max-width: 100%;
+  background-color: $table-bg;
+}
+th {
+  text-align: left;
+}
+
+
+// Baseline styles
+
+.table {
+  width: 100%;
+  margin-bottom: $line-height-computed;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-cell-padding;
+        line-height: $line-height-base;
+        vertical-align: top;
+        border-top: 1px solid $table-border-color;
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $table-border-color;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 2px solid $table-border-color;
+  }
+
+  // Nesting
+  .table {
+    background-color: $body-bg;
+  }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.table-schedule{
+  caption {
+    padding: 10px 5px 0;
+    text-align:right;
+    font-size:11px;
+    color: darken(DodgerBlue, 1%);
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+  thead td{
+    color:DarkSlateGray;
+  }
+  tbody > tr:nth-child(4) > td{
+    border-bottom-width:2px;
+  }
+  tbody td{
+    font-size:14px;
+    color: #aaa;
+    &:first-child{
+      color:Green;
+    }
+  }
+  td.cur-day{
+    background-color: lighten(#eee, 2%);
+  }
+}
+
+.over-time{
+  font-size: 12px;
+  text-align:left;
 }

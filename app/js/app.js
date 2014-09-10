@@ -3,6 +3,7 @@
     'snap',
     'ngResource',
     'ngRoute',
+    'ngTouch',
     'LocalStorageModule',
     'FackbookControllers',
     'FacebookServices',
@@ -11,20 +12,21 @@
 
   app.config(['$routeProvider', function($routeProvider){
     $routeProvider
-    .when('/index', {
-      templateUrl: "views/index.html",
-      controller : "indexController"
+    .when('/list', {
+      templateUrl: "views/list.html",
+      controller : "ListCtrl"
     })
     .when('/gallery', {
       templateUrl: "views/gallery.html"
     })
     .when('/schedule', {
-      templateUrl: "views/schedule.html"
+      templateUrl: "views/schedule.html",
+      controller : "SchedCtrl"
     })
     .when('/notice', {
       templateUrl: "views/notice.html"
     })
-    .otherwise({redirectTo: '/index'});
+    .otherwise({redirectTo: '/list'});
   }]);
 
 })();
