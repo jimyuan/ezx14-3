@@ -143,7 +143,7 @@
     $.watch({ glob: [
       _.app + '/**/*.{html,txt}',
       _.views + '/**/*.html',
-      // _.sass + '/**/*.scss',
+      _.app + '/json/*.json',
       _.css + '/**/*.css',
       _.js + '/**/*.js',
       _.img + '/**/*.{png,jpg,jpeg,gif,ico}'

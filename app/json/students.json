@@ -130,7 +130,7 @@
       "userId"   : 22,
       "fullName" : "滕逸乔",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Female"
     },
     {
       "userId"   : 23,
@@ -196,7 +196,7 @@
       "userId"   : 33,
       "fullName" : "韩璟轩",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Male"
     },
     {
       "userId"   : 34,
@@ -220,7 +220,7 @@
       "userId"   : 37,
       "fullName" : "丁童熙",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Male"
     }
   ]
 }
