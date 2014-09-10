@@ -18,7 +18,7 @@
     <!-- iPad Retina -->
     <link href="touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
   </head>
-  <body onselectstart="return false" ng-controller="globController">
+  <body onselectstart="return false" ng-controller="GlobCtrl">
     <div snap-content snap-options="snapOpts">
       <header class="bar bar-nav">
         <a class="icon icon-bars pull-right" snap-toggle="right"></a>
@@ -29,7 +29,7 @@
     </div>
     <div snap-drawer="right" id="drawerContent">
       <ul class="table-view">
-        <li class="table-view-cell" ng-click="goSection('#/index')">
+        <li class="table-view-cell" ng-click="goSection('#/list')">
           <span class="media-object pull-left icon icon-person"></span>
            花名册
         </li>
