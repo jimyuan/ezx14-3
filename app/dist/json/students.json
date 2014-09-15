@@ -4,223 +4,260 @@
       "userId"   : 1,
       "fullName" : "袁家辰",
       "nickName" : "Jim",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "A-1-1"
     },
     {
       "userId"   : 2,
       "fullName" : "丁可",
       "nickName" : "Coco",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "D-2-2"
     },
     {
       "userId"   : 3,
       "fullName" : "王子旋",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "D-1-2"
     },
     {
       "userId"   : 4,
       "fullName" : "朱皓芸",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "B-1-2"
     },
     {
       "userId"   : 5,
       "fullName" : "陈泓仰",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "B-4-1"
     },
     {
       "userId"   : 6,
       "fullName" : "张禾",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "C-2-1"
     },
     {
       "userId"   : 7,
       "fullName" : "张溢洋",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "A-1-2"
     },
     {
       "userId"   : 8,
       "fullName" : "贾宇凡",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "D-2-1"
     },
     {
       "userId"   : 9,
       "fullName" : "邱静怡",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "A-2-2"
     },
     {
       "userId"   : 10,
       "fullName" : "钱宸君",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "B-3-1"
     },
     {
       "userId"   : 11,
       "fullName" : "戴闫兰惠",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "B-3-2"
     },
     {
       "userId"   : 12,
       "fullName" : "戴闫兰馨",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "D-3-2"
     },
     {
       "userId"   : 13,
       "fullName" : "陈思宇",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "D-4-2"
     },
     {
       "userId"   : 14,
       "fullName" : "夏欣莹",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "C-4-2"
     },
     {
       "userId"   : 15,
       "fullName" : "颜锦",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "A-3-2"
     },
     {
       "userId"   : 16,
       "fullName" : "茅泽南",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "B-1-1"
     },
     {
       "userId"   : 17,
       "fullName" : "吴其阳",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "C-3-1"
     },
     {
       "userId"   : 18,
       "fullName" : "金士懿",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "B-5-1"
     },
     {
       "userId"   : 19,
       "fullName" : "明彧",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "C-4-1"
     },
     {
       "userId"   : 20,
       "fullName" : "解颐",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "D-1-1"
     },
     {
       "userId"   : 21,
       "fullName" : "翁铭洋",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "B-4-2"
     },
     {
       "userId"   : 22,
       "fullName" : "滕逸乔",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "C-1-2"
     },
     {
       "userId"   : 23,
       "fullName" : "程煜祺",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "C-3-2"
     },
     {
       "userId"   : 24,
       "fullName" : "余承骏",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "A-2-1"
     },
     {
       "userId"   : 25,
       "fullName" : "张劼",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "D-3-1"
     },
     {
       "userId"   : 26,
       "fullName" : "丁文澜",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "B-5-2"
     },
     {
       "userId"   : 27,
       "fullName" : "曹筠靖",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "A-4-2"
     },
     {
       "userId"   : 28,
       "fullName" : "陆亦楠",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "C-5-1"
     },
     {
       "userId"   : 29,
       "fullName" : "袁潇",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "B-2-1"
     },
     {
       "userId"   : 30,
       "fullName" : "罗越",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "A-5-2"
     },
     {
       "userId"   : 31,
       "fullName" : "徐卓涵",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "A-3-1"
     },
     {
       "userId"   : 32,
       "fullName" : "吴家文",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "C-2-2"
     },
     {
       "userId"   : 33,
       "fullName" : "韩璟轩",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "A-5-1"
     },
     {
       "userId"   : 34,
       "fullName" : "张昊昱",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "C-1-1"
     },
     {
       "userId"   : 35,
       "fullName" : "张贝妮",
       "nickName" : "",
-      "gender"   : "Female"
+      "gender"   : "Female",
+      "seatPos"  : "B-2-2"
     },
     {
       "userId"   : 36,
       "fullName" : "蒋宇凡",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "D-4-1"
     },
     {
       "userId"   : 37,
       "fullName" : "丁童熙",
       "nickName" : "",
-      "gender"   : "Male"
+      "gender"   : "Male",
+      "seatPos"  : "A-4-1"
     }
   ]
 }

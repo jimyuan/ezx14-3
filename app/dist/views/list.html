@@ -1,18 +1,15 @@
 <div class="list">
   <div class="segmented-control">
-    <a class="control-item" ng-click="viewToggle=true; curFilter='fullName'" ng-class="{active:viewToggle}">
+    <a class="control-item" data-ng-click="viewAll()" data-ng-class="{active:viewToggle}">
       全体名单
     </a>
-    <a class="control-item" ng-click="viewToggle=false; curFilter='-gender'" ng-class="{active:!viewToggle}">
+    <a class="control-item" data-ng-click="viewByGender()" data-ng-class="{active:!viewToggle}">
       按 性 别
     </a>
   </div>
 </div>
-<div class="content-padded">
-  <div class="btn btn-outlined animated bounceIn" 
-    ng-repeat="student in students | orderBy: curFilter" 
-    ng-bind="student.fullName" 
-    ng-click="putit($event)"
-    ng-class="{'btn-primary':student.gender=='Male', 'btn-negative': student.gender=='Female'}"></div>
-    <p class="count-info" ng-show="count=true">本班共有学生 <span ng-bind="students.length"></span> 名，男生 <span ng-bind="male.length"></span> 人，女生 <span ng-bind="students.length-male.length"></span> 人。</p>
+
+<div class="content-padded" id="studentsList">
+  <div data-seat="s.seatPos" data-gender="s.gender" data-ng-repeat="s in students | orderBy: curFilter" data-ng-bind="s.fullName" data-demo="demo"></div>
 </div>
+<p class="count-info" ng-show="showCount">本班共有学生 <span data-ng-bind="students.length"></span> 名，男生 <span data-ng-bind="male.length"></span> 人，女生 <span data-ng-bind="students.length-male.length"></span> 人。</p>
