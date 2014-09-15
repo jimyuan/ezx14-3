@@ -7,7 +7,7 @@
       var array = [], fullName;
       for(var i = 0; i<inputArray.length; i++){
         fullName=inputArray[i].fullName.split('');
-        if(fullName.length===2){
+        if(fullName.length === 2){
           fullName.splice(1,0,"　");
           inputArray[i].fullName=fullName.join('');
         }
@@ -18,7 +18,7 @@
   });
 
   /* 返回男生队列 */
-  app.filter('maleArray', function(){
+  /*app.filter('maleArray', function(){
     return function(inputArray){
       var array = [];
       for(var i = 0; i<inputArray.length; i++){
@@ -28,5 +28,5 @@
       }
       return array;
     };
-  });
+  });*/
 })();

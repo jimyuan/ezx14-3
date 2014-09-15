@@ -39,10 +39,18 @@ html, body{
   @include single-box-shadow(0, 3px, 7px, 2px, gray);
 }
 
-.content-padded{
+#studentsList{
+  margin: 10px 0 10px;
   &>.btn{
-    width:65px;
-    margin:5px;
+    width: percentage(0.9/4);
+    margin: 5px 0 5px;
+    margin-left: percentage(0.1/5);
+  }
+  &.land-view>.btn{
+    width: percentage(0.9/8);
+    margin: 5px 0 5px;
+    margin-left: percentage(0.1/9);
+    font-size: 8px;
   }
 }
 
@@ -192,5 +200,7 @@ th {
   text-align:left;
   span{
     text-decoration:underline;
+    color: red;
+    font-weight: bold;
   }
 }

@@ -30,18 +30,47 @@
   }]);
 
   /* 花名册 */
-  app.controller('ListCtrl', ['$scope', 'Students', '$filter', function($scope, Students, $filter){
-    $scope.viewToggle = true;
-    $scope.curFilter  = 'fullName';
+  app.controller('ListCtrl', ['$scope', '$filter', '$window', 'Common', 'Students', function($scope, $filter, $window, Common, Students){
+    angular.extend($scope, {
+      viewToggle: true,
+      curFilter: 'seatPos',
+      showCount: false,
+      viewAll:  function(){
+        this.viewToggle=true; 
+        this.curFilter='seatPos';
+      },
+      viewByGender: function(){
+        this.viewToggle=false; 
+        this.curFilter=['-gender', 'fullName'];
+      }
+    });
+
+    var whenLand = function(bool){
+      var studentView = angular.element(document.getElementById('studentsList'));
+      bool ? studentView.addClass('land-view') : studentView.removeClass('land-view');
+    }
+
+
+    if($window.orientation){
+      whenLand(Common.is_landscape());
+      $window.addEventListener('orientationchange', function(){
+          whenLand(Common.is_landscape());
+      }, false);
+    }
+    else{
+      whenLand(screen.width > screen.height);
+      $window.addEventListener('resize', function(){
+        whenLand(screen.width > screen.height);
+      }, false);
+    }
 
     Students.query(function(data){
-      $scope.students = $filter('formatName')(data.students);
-      $scope.male = $filter('maleArray')(data.students);
-      $scope.count= true;
 
-      $scope.putit = function($event){
-        angular.element($event.srcElement).toggleClass('btn-outlined');
-      };
+      $scope.students = $filter('formatName', 'orderBy')(data.students);
+      $scope.male = $filter('filter')(data.students, function(student){
+        return student.gender === 'Male';
+      });
+      $scope.showCount= true;
     });
   }]);
 
@@ -53,5 +82,13 @@
     $interval(function(){
       $scope.clock = $filter('date')(new Date(), 'yyyy-MM-dd HH:mm:ss'); 
     }, 1000);
+  }]);
+
+  /* directive test */
+  app.controller('TestCtrl', ['$scope', 'Students', '$filter', function($scope, Students, $filter){
+
+    Students.query(function(data){
+      $scope.students = $filter('formatName')(data.students);      
+    });
   }]);
 })();
