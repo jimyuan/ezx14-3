@@ -17,6 +17,10 @@
     };
   });
 
+  /* 按指定格式分割男女生 */
+  app.filter('genderFilter', function(){
+  });
+
   /* 返回男生队列 */
   /*app.filter('maleArray', function(){
     return function(inputArray){

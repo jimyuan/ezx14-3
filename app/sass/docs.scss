@@ -9,6 +9,15 @@ html, body{
   @include background-image(linear-gradient(top, white, darken(#ddd, 5%))); 
 }
 
+.seat-hide{
+  @media (orientation: portrait){
+    display: none;
+  }
+  @media (orientation: landscape){
+    display: inline-block;
+  }
+}
+
 #drawerContent{
   display:none;
 }
@@ -46,11 +55,48 @@ html, body{
     margin: 5px 0 5px;
     margin-left: percentage(0.1/5);
   }
-  &.land-view>.btn{
-    width: percentage(0.9/8);
-    margin: 5px 0 5px;
-    margin-left: percentage(0.1/9);
-    font-size: 8px;
+  @media (orientation: landscape){
+    &>.btn{
+      width: percentage(0.9/8);
+      margin: 5px 0 5px;
+      margin-left: percentage(0.1/9);
+      font-size: 8px;
+      &:nth-child(2n){
+        margin-left: percentage(0.1/9/4);
+        margin-right: percentage(0.1/9);
+      }
+      &:nth-child(8n){
+        margin-right:0;
+      }
+    }
+  }
+}
+
+#listCtrl{
+  @media (orientation: portrait) { 
+    &{
+      display: block;
+    }
+  }
+  @media (orientation: landscape) { 
+    &{
+      display: none;
+    }
+  }
+}
+
+#desk{
+  @media (orientation: portrait) { 
+    &{
+      display: none;
+    }
+  }
+  @media (orientation: landscape) { 
+    &{
+      display: block;
+      margin:0 auto;
+      width: 40%;
+    }
   }
 }
 
@@ -203,4 +249,11 @@ th {
     color: red;
     font-weight: bold;
   }
+}
+
+#wx-mask{
+  position: absolute;
+  background-color: rgba(0,0,0,.8);
+  @include square(100%);
+  z-index: 1000;
 }

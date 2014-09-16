@@ -4,7 +4,7 @@
   */
   angular.element(window).on('resize', function(){
     this.scrollTo(0, 0);
-  })
+  });
 
   var app=angular.module('facebook', [
     'snap',

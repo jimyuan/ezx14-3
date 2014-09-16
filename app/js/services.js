@@ -16,13 +16,27 @@
   app.factory('Common', ['$window', function($window){
     return {
       is_landscape: function(){ //横屏检测
-        return ( $window.orientation == 90 || $window.orientation == -90 );
+        if($window.orientation) {
+          return ( $window.orientation === 90 || $window.orientation === -90 );
+        }
+        else{
+          return (screen.width > screen.height);
+        }
       },
-
-      is_portrait: function(){
-        return ( $window.orientation == 0 || $window.orientation == 180 );
+      orient_event: function(fn){
+        var evt = $window.orientation ? 'orientationchange' : 'resize';
+        $window.addEventListener(evt, fn, false);
+      },
+      is_weixin: function(){
+        var ua = navigator.userAgent.toLowerCase();
+        return (/micromessenger/.test(ua)) ? true : false ;
+      },
+      show_wxmask: function(){
+        if(!this.is_weixin()){
+          var root = angular.element(document.querySelector('body'));
+          root.append('<div id="wx-mask"></div>');
+        }
       }
-
-    }
+    };
   }]);
 })();

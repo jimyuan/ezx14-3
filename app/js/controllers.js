@@ -2,7 +2,7 @@
   var app=angular.module('FackbookControllers',[]);
 
   //globel controller
-  app.controller('GlobCtrl', ['$scope', '$window', 'snapRemote', function($scope, $window, snapRemote){
+  app.controller('GlobCtrl', ['$scope', '$window', 'snapRemote', 'Common', function($scope, $window, snapRemote, Common){
     $scope.title='闸北区二中心一(3)班';
     $scope.snapOpts={
       maxPosition: 160,
@@ -27,50 +27,28 @@
       $window.location.hash=hash;
       snapRemote.toggle('right');
     };
+
+    // Common.show_wxmask();
   }]);
 
   /* 花名册 */
-  app.controller('ListCtrl', ['$scope', '$filter', '$window', 'Common', 'Students', function($scope, $filter, $window, Common, Students){
+  app.controller('ListCtrl', ['$scope', '$filter', 'Common', 'Students', function($scope, $filter, Common, Students){
     angular.extend($scope, {
-      viewToggle: true,
-      curFilter: 'seatPos',
-      showCount: false,
-      viewAll:  function(){
-        this.viewToggle=true; 
-        this.curFilter='seatPos';
-      },
-      viewByGender: function(){
-        this.viewToggle=false; 
-        this.curFilter=['-gender', 'fullName'];
-      }
+      showCount: false
     });
 
-    var whenLand = function(bool){
-      var studentView = angular.element(document.getElementById('studentsList'));
-      bool ? studentView.addClass('land-view') : studentView.removeClass('land-view');
-    }
-
-
-    if($window.orientation){
-      whenLand(Common.is_landscape());
-      $window.addEventListener('orientationchange', function(){
-          whenLand(Common.is_landscape());
-      }, false);
-    }
-    else{
-      whenLand(screen.width > screen.height);
-      $window.addEventListener('resize', function(){
-        whenLand(screen.width > screen.height);
-      }, false);
-    }
-
     Students.query(function(data){
-
-      $scope.students = $filter('formatName', 'orderBy')(data.students);
-      $scope.male = $filter('filter')(data.students, function(student){
-        return student.gender === 'Male';
+      var students = $filter('formatName')(data.students);
+      angular.extend($scope, {
+        students: $filter('orderBy')(students, 'seatNo'),
+        male: $filter('filter')(students, function(student){
+          return student.gender === 'Male';
+        }),
+        female: $filter('filter')(students, function(student){
+          return student.gender === 'Female';
+        }),
+        showCount: true
       });
-      $scope.showCount= true;
     });
   }]);
 

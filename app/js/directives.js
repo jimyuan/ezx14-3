@@ -10,15 +10,30 @@
         seat: '=',
         gender: '='
       },
-      template : '<div class="btn btn-outlined animated bounceIn" ng-class="{\'btn-primary\':ifMale, \'btn-negative\':!ifMale}">'
+      template : '<div class="btn btn-outlined animated bounceIn" ng-class="{\'btn-primary\':ifMale, \'btn-negative\':ifFemale, \'seat-hide\':ifNone}">'
                 +'  <span ng-transclude></span>'
                 +'</div>',
       link : function(scope, ele, attr){
-        (scope.gender === 'Male') ? scope.ifMale = true : scope.ifMale = false;
+        if(scope.gender === 'Male'){
+          scope.ifMale = true;
+          scope.ifFemale = false;
+          scope.ifNone = false;
+        }
+        else if(scope.gender === 'Female'){
+          scope.ifMale = false;
+          scope.ifFemale = true;
+          scope.ifNone = false;
+        }
+        else if(scope.gender === 'unknown'){
+          scope.ifMale = false;
+          scope.ifFemale = false;
+          scope.ifNone = true;
+        }
         ele.on('click', function(){
           ele.toggleClass('btn-outlined');
-        })
+        });
       }
-    }
+    };
   });
+
 })();
