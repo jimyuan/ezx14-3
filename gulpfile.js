@@ -74,7 +74,7 @@
   //| ✓ minify images
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('images', function() {
-    gulp.src(_.app + '/*.{png,jpg,jpeg,gif,ico}').pipe(gulp.dest(_.dist));
+    // gulp.src(_.app + '/*.{png,jpg,jpeg,gif,ico}').pipe(gulp.dest(_.dist));
     return gulp.src([
       _.img + '/**/*.{png,jpg,jpeg,gif,ico}'
     ])
@@ -114,9 +114,29 @@
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('copy', function(){
     gulp.src(_.app + '/*.txt').pipe(gulp.dest(_.dist));
-    gulp.src(_.views + '/*.html').pipe(gulp.dest(_.dist + '/views/'));
+    gulp.src(_.views + '/*.js').pipe(gulp.dest(_.dist + '/views/'));
     gulp.src(_.app + '/bower_components/ratchet/fonts/*.*').pipe(gulp.dest(_.dist + '/fonts/'));
     gulp.src(_.app + '/json/*.*').pipe($.jsonminify()).pipe(gulp.dest(_.dist + '/json/'));
+  });
+
+  //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //| ✓ concat & minify all template to a js file
+  //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+  gulp.task('tmpl2js', function(){
+    return gulp.src(_.views + '/**/*.html')
+    .pipe($.plumber())
+    .pipe($.minifyHtml({
+      empty: true,
+      spare: true,
+      quotes: true
+    }))
+    .pipe($.ngHtml2js({
+      moduleName: "FacebookTemplate",
+      prefix: "views/"
+    }))
+    .pipe($.concat("templates.js", {newLine: ';'}))
+    .pipe(gulp.dest(_.app + '/js/'))
+    .pipe($.size());
   });
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,7 +151,7 @@
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //| ✓ server
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
- gulp.task('server', ['connect', 'sass'], function() {
+ gulp.task('server', ['connect', 'sass', 'tmpl2js'], function() {
    gulp.start('localhost');
  });
 
@@ -141,8 +161,7 @@
   gulp.task('watch', ['server'], function() {
     // Watch for changes in `app` dir
     $.watch({ glob: [
-      _.app + '/**/*.{html,txt}',
-      _.views + '/**/*.html',
+      _.app + '/*.{html,txt}',
       _.app + '/json/*.json',
       _.css + '/**/*.css',
       _.js + '/**/*.js',
@@ -152,14 +171,20 @@
     });
 
     // Watch style files
-    $.watch({ glob: [_.sass + '/**/*.{sass,scss}'] }, function() {
+    $.watch({ glob: [_.sass + '/**/*.{sass,scss}']}, function() {
       gulp.start('sass');
     });
 
     // Watch image files
-    $.watch({ glob: [_.img + '/**/*.{png,jpg,jpeg,gif,ico}'] }, function() {
+    $.watch({ glob: [_.img + '/**/*.{png,jpg,jpeg,gif,ico}']}, function() {
       gulp.start('images');
     });
+
+    // Watch template files
+    $.watch({ glob: [_.views + '/**/*.html']}, function() {
+      gulp.start('tmpl2js');
+    });
+
   });
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,7 +208,7 @@
   //| ✓ alias
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('test', ['jsonlint', 'jshint']);
-  gulp.task('build', ['test', 'clean', 'html', 'images', 'svg']);
+  gulp.task('build', ['test', 'clean', 'tmpl2js', 'html', 'images', 'svg']);
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //| ✓ default

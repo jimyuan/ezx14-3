@@ -1,11 +1,18 @@
 (function(){
+  'use strict';
+  
   var app = angular.module('FacebookServices', []);
 
-  app.factory('Students', ['$resource', '$window', function($resource, $window){
-    var url='/json/:service.json';
-    if ($window.location.host.indexOf('github.io') !== -1){
+  app.factory('Students', ['$resource', '$window', 'Common', function($resource, $window, Common){
+    var url = '/json/:service.json';
+    var evn = Common.runtimeEvn();
+    if(evn === 1) {
+      url = '/dist' + url;
+    }
+    if(evn === 2) {
       url = '/ezx14-3/app/dist' + url;
     }
+
     return $resource(url, {}, {
       query:{
         params:{service: 'students'}
@@ -41,7 +48,27 @@
         var root = angular.element(document.querySelector('body')),
             text = content || '';
         root.append('<div class="web-mask">'+text+'</div>');
+      },
+      runtimeEvn: function(){
+        //0开发 1测试 2生产 3其他
+        var host = $window.location.host,
+            path = $window.location.pathname,
+            local= /^(localhost|10\.10|127\.0|192\.168)/i;
+
+        if(local.test(host) && /^\/d.html/.test(path)) {
+          return 0;
+        }
+        else if(local.test(host) && (/^\//.test(path) || /^\/index.html/.test(path))){
+          return 1;
+        }
+        else if(/github.io$/.test(host)){
+          return 2;
+        }
+        else {
+          return 3;
+        }
       }
+
     };
   }]);
 })();

@@ -1,4 +1,5 @@
 (function(){
+  'use strict';
   /*
     fix minimal-ui landscape gray block bug.
   */
@@ -15,7 +16,8 @@
     'FackbookControllers',
     'FacebookServices',
     'FacebookFilters',
-    'FacebookDirectives'
+    'FacebookDirectives',
+    'FacebookTemplate'
   ]);
 
   app.config(['$routeProvider', function($routeProvider){
