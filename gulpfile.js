@@ -113,8 +113,6 @@
   //| ✓ copy static files to dist files
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('copy', function(){
-    gulp.src(_.app + '/*.txt').pipe(gulp.dest(_.dist));
-    gulp.src(_.views + '/*.js').pipe(gulp.dest(_.dist + '/views/'));
     gulp.src(_.app + '/bower_components/ratchet/fonts/*.*').pipe(gulp.dest(_.dist + '/fonts/'));
     gulp.src(_.app + '/json/*.*').pipe($.jsonminify()).pipe(gulp.dest(_.dist + '/json/'));
   });
