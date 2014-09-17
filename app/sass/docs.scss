@@ -18,6 +18,11 @@ html, body{
   }
 }
 
+h1.title{
+  color: DarkBlue;
+  font-weight: bold;
+}
+
 #drawerContent{
   display:none;
 }
@@ -216,7 +221,7 @@ th {
 
 .table-schedule{
   caption {
-    padding: 10px 5px 0;
+    padding: 0 5px;
     text-align:right;
     font-size:11px;
     color: darken(DodgerBlue, 1%);
@@ -251,9 +256,43 @@ th {
   }
 }
 
-#wx-mask{
+.web-mask{
   position: absolute;
-  background-color: rgba(0,0,0,.8);
   @include square(100%);
+  background-color: rgba(0,0,0,.8);
   z-index: 1000;
+}
+#wxMask{
+  background:rgba(0,0,0,.8) url(../img/icon-safari.png) no-repeat 95% 5%;
+  background-size:25%;
+}
+
+#tipBar{
+  font-size: 12px;
+  line-height:18px;
+  border-radius:0 0 5px 5px;
+  margin: -20px -10px 10px 0;
+  @include box-shadow();
+  span{
+    font-size: 20px;
+    line-height:18px;
+    color:white;
+  }
+}
+
+#noticeList{
+  margin:10px;
+  dt{
+    padding-top: 5px;
+    margin-top: 5px;
+    font-style: bold;
+    color: blue;
+    &:not(:first-child){
+      border-top:1px dashed #ccc;
+    }
+  }
+  dd{
+    margin-left: 10%;
+    padding-bottom:5px;
+  }
 }

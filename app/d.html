@@ -34,21 +34,9 @@
     </div>
     <div snap-drawer="right" id="drawerContent">
       <ul class="table-view">
-        <li class="table-view-cell" ng-click="goSection('#/list')">
-          <span class="media-object pull-left icon icon-person"></span>
-           花名册
-        </li>
-        <li class="table-view-cell" ng-click="goSection('#/schedule')">
-          <span class="media-object pull-left icon icon-compose"></span>
-           课程表
-        </li>
-        <li class="table-view-cell" ng-click="goSection('#/notice')">
-          <span class="media-object pull-left icon icon-sound"></span>
-          消息树
-        </li>
-        <li class="table-view-cell" ng-click="goSection('#/gallery')">
-          <span class="media-object pull-left icon icon-pages"></span>
-          照片墙
+        <li class="table-view-cell" data-ng-click="goSection(s.hash)" data-ng-repeat="s in snapMenus">
+          <span class="media-object pull-left icon icon-{{s.icon}}"></span>
+           {{s.menu}}
         </li>
       </ul>
     </div>
