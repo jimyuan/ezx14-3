@@ -1,7 +1,8 @@
 <div class="schedule">
+  <button class="btn btn-negative btn-block" id="tipBar" data-ng-show="showTips"></button>
   <h3>课程表 <span>一(3)班第一学期</span></h3>
   <table class="table table-bordered table-schedule">
-    <caption ng-bind="clock" class="animated bounce"></caption>
+    <caption ng-bind="clock"></caption>
     <thead>
       <tr>
         <td></td>
@@ -71,5 +72,5 @@
       </tr>
     </tbody>
   </table>
-  <p class="over-time">放学时间：</p>
+  <p class="over-time">放学时间：周一至周四为 <span>15:15</span> , 周五为 <span>13:00</span>.</p>
 </div>

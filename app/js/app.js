@@ -1,4 +1,11 @@
 (function(){
+  /*
+    fix minimal-ui landscape gray block bug.
+  */
+  angular.element(window).on('resize', function(){
+    this.scrollTo(0, 0);
+  });
+
   var app=angular.module('facebook', [
     'snap',
     'ngResource',
@@ -7,7 +14,8 @@
     'LocalStorageModule',
     'FackbookControllers',
     'FacebookServices',
-    'FacebookFilters'
+    'FacebookFilters',
+    'FacebookDirectives'
   ]);
 
   app.config(['$routeProvider', function($routeProvider){
@@ -25,6 +33,10 @@
     })
     .when('/notice', {
       templateUrl: "views/notice.html"
+    })
+    .when('/test', {
+      templateUrl: "views/test.html",
+      controller : "TestCtrl"
     })
     .otherwise({redirectTo: '/list'});
   }]);

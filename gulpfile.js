@@ -116,7 +116,7 @@
     gulp.src(_.app + '/*.txt').pipe(gulp.dest(_.dist));
     gulp.src(_.views + '/*.html').pipe(gulp.dest(_.dist + '/views/'));
     gulp.src(_.app + '/bower_components/ratchet/fonts/*.*').pipe(gulp.dest(_.dist + '/fonts/'));
-    gulp.src(_.app + '/json/*.*').pipe(gulp.dest(_.dist + '/json/'));
+    gulp.src(_.app + '/json/*.*').pipe($.jsonminify()).pipe(gulp.dest(_.dist + '/json/'));
   });
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,7 +143,7 @@
     $.watch({ glob: [
       _.app + '/**/*.{html,txt}',
       _.views + '/**/*.html',
-      // _.sass + '/**/*.scss',
+      _.app + '/json/*.json',
       _.css + '/**/*.css',
       _.js + '/**/*.js',
       _.img + '/**/*.{png,jpg,jpeg,gif,ico}'

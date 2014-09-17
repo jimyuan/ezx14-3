@@ -9,6 +9,20 @@ html, body{
   @include background-image(linear-gradient(top, white, darken(#ddd, 5%))); 
 }
 
+.seat-hide{
+  @media (orientation: portrait){
+    display: none;
+  }
+  @media (orientation: landscape){
+    display: inline-block;
+  }
+}
+
+h1.title{
+  color: DarkBlue;
+  font-weight: bold;
+}
+
 #drawerContent{
   display:none;
 }
@@ -39,10 +53,55 @@ html, body{
   @include single-box-shadow(0, 3px, 7px, 2px, gray);
 }
 
-.content-padded{
+#studentsList{
+  margin: 10px 0 10px;
   &>.btn{
-    width:65px;
-    margin:5px;
+    width: percentage(0.9/4);
+    margin: 5px 0 5px;
+    margin-left: percentage(0.1/5);
+  }
+  @media (orientation: landscape){
+    &>.btn{
+      width: percentage(0.9/8);
+      margin: 5px 0 5px;
+      margin-left: percentage(0.1/9);
+      font-size: 8px;
+      &:nth-child(2n){
+        margin-left: percentage(0.1/9/4);
+        margin-right: percentage(0.1/9);
+      }
+      &:nth-child(8n){
+        margin-right:0;
+      }
+    }
+  }
+}
+
+#listCtrl{
+  @media (orientation: portrait) { 
+    &{
+      display: block;
+    }
+  }
+  @media (orientation: landscape) { 
+    &{
+      display: none;
+    }
+  }
+}
+
+#desk{
+  @media (orientation: portrait) { 
+    &{
+      display: none;
+    }
+  }
+  @media (orientation: landscape) { 
+    &{
+      display: block;
+      margin:0 auto;
+      width: 40%;
+    }
   }
 }
 
@@ -162,7 +221,7 @@ th {
 
 .table-schedule{
   caption {
-    padding: 10px 5px 0;
+    padding: 0 5px;
     text-align:right;
     font-size:11px;
     color: darken(DodgerBlue, 1%);
@@ -190,4 +249,50 @@ th {
 .over-time{
   font-size: 12px;
   text-align:left;
+  span{
+    text-decoration:underline;
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.web-mask{
+  position: absolute;
+  @include square(100%);
+  background-color: rgba(0,0,0,.8);
+  z-index: 1000;
+}
+#wxMask{
+  background:rgba(0,0,0,.8) url(../img/icon-safari.png) no-repeat 95% 5%;
+  background-size:25%;
+}
+
+#tipBar{
+  font-size: 12px;
+  line-height:18px;
+  border-radius:0 0 5px 5px;
+  margin: -20px -10px 10px 0;
+  @include box-shadow();
+  span{
+    font-size: 20px;
+    line-height:18px;
+    color:white;
+  }
+}
+
+#noticeList{
+  margin:10px;
+  dt{
+    padding-top: 5px;
+    margin-top: 5px;
+    font-style: bold;
+    color: blue;
+    &:not(:first-child){
+      border-top:1px dashed #ccc;
+    }
+  }
+  dd{
+    margin-left: 10%;
+    padding-bottom:5px;
+  }
 }
