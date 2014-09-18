@@ -44,7 +44,6 @@
   //| ✓ sass2css
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('sass', function(){
-    console.log(_.sass + '/**/*.scss');
     return gulp.src(_.sass + '/**/*.scss').pipe($.rubySass({
       style: 'expanded',
       compass: true,
@@ -92,17 +91,11 @@
   //| ✓ join & minify css & js
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('html', ['sass'], function() {
-    gulp.start('copy');
-    var js = $.filter('**/*.js'), css = $.filter('**/*.css');
-    return gulp.src([_.app + '/*.html'])
+    return gulp.src(_.app + '/*.html')
     .pipe($.plumber())
     .pipe($.useref.assets())
-    .pipe(js)
-    .pipe($.uglify())
-    .pipe(js.restore())
-    .pipe(css)
-    .pipe($.minifyCss({keepSpecialComments:0}))
-    .pipe(css.restore())
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.minifyCss({keepSpecialComments:0})))
     .pipe($.useref.restore())
     .pipe($.useref())
     .pipe(gulp.dest(_.dist))
@@ -206,7 +199,7 @@
   //| ✓ alias
   //'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   gulp.task('test', ['jsonlint', 'jshint']);
-  gulp.task('build', ['test', 'clean', 'tmpl2js', 'html', 'images', 'svg']);
+  gulp.task('build', ['test', 'clean', 'tmpl2js', 'html', 'copy', 'images', 'svg']);
 
   //|**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //| ✓ default

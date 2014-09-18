@@ -1,6 +1,6 @@
 (function(){
-
   'use strict';
+  
   /*
     fix minimal-ui landscape gray block bug.
   */
