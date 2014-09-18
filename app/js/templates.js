@@ -6,7 +6,7 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('views/gallery.html',
-    'gallery');
+    '<div class="gear-1"><span class="icon icon-gear"></span><p>敬请期待</p></div><div class="gear-2"><span class="icon icon-gear"></span></div>');
 }]);
 })();
 ;(function(module) {
@@ -29,6 +29,17 @@ try {
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('views/notice.html',
     '<dl id="noticeList"><dt><span class="icon icon-edit"></span><time>2014.9.17</time></dt><dd>重构学生列表的显示方式</dd><dd>添加新功能：横屏后切换到座位表</dd><dd>添加新功能：课程表页面，当天如有美术课，会有消息块提醒，记得带美术包</dd><dt><span class="icon icon-edit"></span><time>2014.9.10</time></dt><dd>完成2个功能：学生列表（按不同颜色表示性别）&amp; 第一学期课程表</dd><dt><span class="icon icon-edit"></span><time>2014.9.4</time></dt><dd>开始构建本webapp</dd></dl>');
+}]);
+})();
+;(function(module) {
+try {
+  module = angular.module('FacebookTemplate');
+} catch (e) {
+  module = angular.module('FacebookTemplate', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('views/resource.html',
+    '<div id="resource"><h3>教学资源汇总</h3><ul><li>一年级第一学期磁带转MP3下载:<br>http://pan.baidu.com/s/1dD9wrnV 【提取码：<code>0a75</code>】</li></ul></div>');
 }]);
 })();
 ;(function(module) {

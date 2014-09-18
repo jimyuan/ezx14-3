@@ -4,7 +4,7 @@
   var app=angular.module('FackbookControllers',[]);
 
   //globel controller
-  app.controller('GlobCtrl', ['$scope', '$window', 'snapRemote', 'Common', function($scope, $window, snapRemote, Common){
+  app.controller('GlobCtrl', ['$scope', '$window', 'snapRemote', function($scope, $window, snapRemote){
     angular.extend($scope, {
       title : '闸北区二中心一(3)班',
       snapOpts : {
@@ -14,10 +14,11 @@
         disable:'left'
       },
       snapMenus : [
-        {menu:'花名册', hash:'#/list', icon:'person'},
-        {menu:'课程表', hash:'#/schedule', icon:'compose'},
-        {menu:'消息树', hash:'#/notice', icon:'sound'},
-        {menu:'照片墙', hash:'#/gallery', icon:'pages'}
+        {menu:'学生名册', hash:'#/list', icon:'person'},
+        {menu:'一周课程', hash:'#/schedule', icon:'compose'},
+        {menu:'教学资源', hash:'#/resource', icon:'search'},
+        {menu:'精彩瞬间', hash:'#/gallery', icon:'pages'},
+        {menu:'更新日志', hash:'#/notice', icon:'refresh'}
       ]
 
     });

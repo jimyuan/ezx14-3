@@ -22,25 +22,28 @@
 
   app.config(['$routeProvider', function($routeProvider){
     $routeProvider
-    .when('/list', {
-      templateUrl: "views/list.html",
-      controller : "ListCtrl"
-    })
-    .when('/gallery', {
-      templateUrl: "views/gallery.html"
-    })
-    .when('/schedule', {
-      templateUrl: "views/schedule.html",
-      controller : "SchedCtrl"
-    })
-    .when('/notice', {
-      templateUrl: "views/notice.html"
-    })
-    .when('/test', {
-      templateUrl: "views/test.html",
-      controller : "TestCtrl"
-    })
-    .otherwise({redirectTo: '/list'});
+      .when('/list', {
+        templateUrl: "views/list.html",
+        controller : "ListCtrl"
+      })
+      .when('/gallery', {
+        templateUrl: "views/gallery.html"
+      })
+      .when('/resource', {
+        templateUrl: 'views/resource.html'
+      })
+      .when('/schedule', {
+        templateUrl: "views/schedule.html",
+        controller : "SchedCtrl"
+      })
+      .when('/notice', {
+        templateUrl: "views/notice.html"
+      })
+      .when('/test', {
+        templateUrl: "views/test.html",
+        controller : "TestCtrl"
+      })
+      .otherwise({redirectTo: '/list'});
   }]);
 
 })();
