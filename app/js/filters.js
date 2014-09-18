@@ -1,4 +1,6 @@
 (function(){
+  'use strict';
+
   var app=angular.module('FacebookFilters', []);
 
   /* 查找双字姓名，在其中间插入全角空格，使其能够与其他姓名对齐 */

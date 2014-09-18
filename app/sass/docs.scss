@@ -296,3 +296,67 @@ th {
     padding-bottom:5px;
   }
 }
+
+@include keyframes(gear-1-rotate) {
+  from{
+    @include rotate(0deg);
+  }
+  to{
+    @include rotate(360deg);
+  }
+}
+@include keyframes(gear-2-rotate) {
+  from{
+    @include rotate(0deg);
+  }
+  to{
+    @include rotate(-360deg);
+  }
+}
+
+$dot: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDgwQ0ZDNjExRUI3MTFFM0IwRThCQ0Q5NEU1RkRBNUMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDgwQ0ZDNjIxRUI3MTFFM0IwRThCQ0Q5NEU1RkRBNUMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0ODBDRkM1RjFFQjcxMUUzQjBFOEJDRDk0RTVGREE1QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0ODBDRkM2MDFFQjcxMUUzQjBFOEJDRDk0RTVGREE1QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmPJ8vIAAAA2SURBVHjaYqypqbFgYGDIAOIAIN4AxDNYoALxDBAAppmgKpBBABNUCzLYANI+A6YCZiZAgAEAE0oJED1B6B4AAAAASUVORK5CYII=';
+
+.gear-1{
+  $s: 100px;
+  position:absolute;
+  top:50%; left:50%;
+  margin-top: -$s/2;
+  margin-left:-$s/2;
+  @include square($s);
+  span{
+    background:url($dot) no-repeat center center;
+    color: #ccc;
+    font-size:100px;
+    @include animation(gear-1-rotate 5s linear infinite);
+  }
+  p{
+    text-align:center;
+    font-size:12px;
+    color: red;
+  }
+}
+.gear-2{
+  $s: 100px;
+  position:absolute;
+  top:50%; left:50%;
+  margin-top: ($s + 11) * -1;
+  margin-left: -5px;
+  @include square($s);
+  span{
+    background:url($dot) no-repeat center center;
+    color:#aaa;
+    font-size:100px;
+    @include animation(gear-2-rotate 5s linear infinite);
+  }
+}
+
+#resource{
+  h3{
+    text-align:center;
+  }
+  padding:20px 10px;
+  font-size:10px;
+  code {
+    color: blue;
+  }
+}

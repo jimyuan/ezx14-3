@@ -1,4 +1,6 @@
 (function(){
+  'use strict';
+
   var app = angular.module('FacebookDirectives', []);
 
   app.directive('seat', function(){
