@@ -17,7 +17,7 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('views/list.html',
-    '<div class="list" id="listCtrl"><div class="segmented-control"><a class="control-item active">全体名单</a></div></div><div class="content-padded" id="studentsList"><div data-seat="s.seatPos" data-gender="s.gender" data-ng-repeat="s in students" data-ng-bind="s.fullName" data-demo="demo"></div></div><button class="btn btn-outlined" id="desk">讲 台 处</button><p class="count-info" data-ng-show="showCount">本班共有学生 <span data-ng-bind="male.length + female.length"></span> 名，男生 <span data-ng-bind="male.length"></span> 人，女生 <span data-ng-bind="female.length"></span> 人。</p>');
+    '<div class="list" id="listCtrl"><div class="segmented-control"><a class="control-item active">全体名单</a></div></div><div class="content-padded" id="studentsList"><div data-seat="s.seatPos" data-gender="s.gender" data-ng-repeat="s in students" data-ng-bind="s.fullName"></div></div><button class="btn btn-outlined" id="desk">讲 台 处</button><p class="count-info" data-ng-show="showCount">本班共有学生 <span data-ng-bind="male.length + female.length"></span> 名，男生 <span data-ng-bind="male.length"></span> 人，女生 <span data-ng-bind="female.length"></span> 人。</p>');
 }]);
 })();
 ;(function(module) {
